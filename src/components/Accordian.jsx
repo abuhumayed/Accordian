@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Accordian = () => {
+const Accordian = ({ question, answer }) => {
   const [accordianOpen, setAccordianOpen] = useState(false);
   return (
     <div className="py-2">
@@ -8,7 +8,7 @@ const Accordian = () => {
         onClick={() => setAccordianOpen(!accordianOpen)}
         className="flex justify-between w-full "
       >
-        <span>This is title</span>
+        <span>{question}</span>
         {/* {accordianOpen ? <span>-</span> : <span>+</span>} */}
         <svg
           className="fill-indigo-500 shrink-0 ml-8"
@@ -44,7 +44,7 @@ const Accordian = () => {
         }
                 `}
       >
-        <div className="overflow-hidden">This is the Answer</div>
+        <div className="overflow-hidden">{answer}</div>
       </div>
     </div>
   );
